@@ -10,3 +10,5 @@
 /client/Unity.PackageManagerUI.Editor.csproj
 /client/Unity.Analytics.DataPrivacy.csproj
 /client/Unity.TextMeshPro.csproj
+/cluster/dbcontext/obj
+obj
