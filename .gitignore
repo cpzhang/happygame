@@ -1,0 +1,12 @@
+/client/.vs
+/client/Library
+/client/Logs
+/client/obj
+/client/Temp
+/client/Assembly-CSharp.csproj
+/client/client.sln
+/client/Unity.CollabProxy.Editor.csproj
+/client/Unity.TextMeshPro.Editor.csproj
+/client/Unity.PackageManagerUI.Editor.csproj
+/client/Unity.Analytics.DataPrivacy.csproj
+/client/Unity.TextMeshPro.csproj
