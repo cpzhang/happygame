@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 namespace HotFix
 {
     class CanvasBehaviour : MonoBehaviour
     {
-        Button _button;
+  //      Button _button;
         void Awake()
         {
             UnityEngine.Debug.Log("microphone awake ...");

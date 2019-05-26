@@ -12,8 +12,11 @@ namespace HotFix
         {
             //UnityEngine.GameObject.FindGameObjectWithTag("Canvas").AddComponent<CanvasBehaviour>();
             UnityEngine.Debug.Log("hotfix start ...");
-            sinks_.Add(new LoginComponent());
+            var lc = new LoginComponent();
+            lc.AWake();
+            sinks_.Add(lc);
             //
+            
             //tcp_.ConnectTaskAsync();
         }
     }
