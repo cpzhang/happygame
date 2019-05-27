@@ -15,6 +15,7 @@ namespace dbcontext
         {
         }
 
+        public virtual DbSet<UnityLog> UnityLog { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +30,26 @@ namespace dbcontext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+
+            modelBuilder.Entity<UnityLog>(entity =>
+            {
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Ip)
+                    .IsRequired()
+                    .HasColumnName("IP")
+                    .HasMaxLength(32);
+
+                entity.Property(e => e.LogString)
+                    .IsRequired()
+                    .HasMaxLength(64);
+
+                entity.Property(e => e.StackTrace)
+                    .IsRequired()
+                    .HasMaxLength(64);
+
+                entity.Property(e => e.Time).HasColumnType("datetime");
+            });
 
             modelBuilder.Entity<User>(entity =>
             {

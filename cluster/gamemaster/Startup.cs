@@ -30,6 +30,7 @@ namespace gamemaster
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var dbc = Configuration["DB:connectionString"];
             services.AddDbContext<DBContext>(options => options.UseSqlServer(Configuration["DB:" + dbc]));
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,14 +40,19 @@ namespace gamemaster
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            //else
+            //{
+            //    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            //    app.UseHsts();
+            //}
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseStaticFiles();
+            var x = new DefaultFilesOptions();
+            x.DefaultFileNames.Clear();
+            x.DefaultFileNames.Add("Login.html");
+            app.UseDefaultFiles(x);
         }
     }
 }
