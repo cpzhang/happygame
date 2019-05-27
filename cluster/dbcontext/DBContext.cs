@@ -42,11 +42,11 @@ namespace dbcontext
 
                 entity.Property(e => e.LogString)
                     .IsRequired()
-                    .HasMaxLength(64);
+                    .HasMaxLength(128);
 
                 entity.Property(e => e.StackTrace)
                     .IsRequired()
-                    .HasMaxLength(64);
+                    .HasMaxLength(256);
 
                 entity.Property(e => e.Time).HasColumnType("datetime");
             });
