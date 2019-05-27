@@ -31,7 +31,7 @@ namespace gamemaster.Controllers
         [HttpGet("[action]")]
         public async Task logAsync(string logString, string stackTrace, byte type)
         {
-            //WriteLine(Request.HttpContext.ToString());
+            WriteLine(Request.HttpContext.Request.QueryString.ToString());
             try
             {
                 await dbcontext_.UnityLog.AddAsync(
