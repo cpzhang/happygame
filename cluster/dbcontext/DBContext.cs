@@ -46,7 +46,7 @@ namespace dbcontext
 
                 entity.Property(e => e.StackTrace)
                     .IsRequired()
-                    .HasMaxLength(256);
+                    .HasMaxLength(512);
 
                 entity.Property(e => e.Time).HasColumnType("datetime");
             });
